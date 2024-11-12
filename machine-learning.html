@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machine Learning</title>
     <link rel="stylesheet" href="styles/style.css">
+    <!-- Link to Animate.css for scroll animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* General Styling */
         body {
@@ -48,10 +52,26 @@
             color: #a8dadc;
         }
 
-        /* Chart Styling */
-        .chart-container {
-            max-width: 600px;
-            margin: 20px auto;
+        /* Key Concepts with Icons */
+        .concept-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .concept-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+            color: #1d3557;
+        }
+        .concept-item i {
+            font-size: 1.5em;
+            color: #457b9d;
+            transition: transform 0.3s;
+        }
+        .concept-item i:hover {
+            transform: scale(1.2);
         }
 
         /* Table Styling */
@@ -124,25 +144,25 @@
 
     <main>
         <!-- Introductory paragraph -->
-        <section id="intro">
+        <section id="intro" class="animate__animated animate__fadeIn">
             <p>Machine Learning is a subset of Artificial Intelligence that focuses on building systems capable of learning from data to make predictions, classify information, or enhance decision-making processes.</p>
             <img src="https://github.com/yourusername/yourrepo/raw/main/images/ml_intro.jpg" alt="Illustration of Machine Learning Concepts" style="width:100%; max-width:600px;">
         </section>
 
         <!-- Key Concepts -->
-        <section id="concepts">
+        <section id="concepts" class="animate__animated animate__fadeInUp">
             <h2>Key Concepts in Machine Learning</h2>
-            <ul>
-                <li><strong>Data:</strong> The core of machine learning is data, which serves as the foundation for training algorithms.</li>
-                <li><strong>Algorithms:</strong> Instructions or sequences that allow machines to find patterns or classify data.</li>
-                <li><strong>Model Training:</strong> The process of feeding data to a machine learning algorithm to enable it to make predictions.</li>
-                <li><strong>Evaluation:</strong> Assessing the model's performance through metrics such as accuracy, precision, and recall.</li>
+            <ul class="concept-list">
+                <li class="concept-item"><i class="fas fa-database"></i><strong>Data:</strong> The core of machine learning is data, which serves as the foundation for training algorithms.</li>
+                <li class="concept-item"><i class="fas fa-cogs"></i><strong>Algorithms:</strong> Instructions or sequences that allow machines to find patterns or classify data.</li>
+                <li class="concept-item"><i class="fas fa-brain"></i><strong>Model Training:</strong> The process of feeding data to a machine learning algorithm to enable it to make predictions.</li>
+                <li class="concept-item"><i class="fas fa-chart-line"></i><strong>Evaluation:</strong> Assessing the model's performance through metrics such as accuracy, precision, and recall.</li>
             </ul>
             <img src="https://github.com/yourusername/yourrepo/raw/main/images/ml_key_concepts.jpg" alt="Key Concepts Diagram" style="width:100%; max-width:600px;">
         </section>
 
         <!-- Types of Machine Learning Algorithms -->
-        <section id="types">
+        <section id="types" class="animate__animated animate__fadeInUp">
             <h2>Types of Machine Learning Algorithms</h2>
             <table>
                 <thead>
@@ -173,7 +193,7 @@
         </section>
 
         <!-- Sample Chart with Chart.js -->
-        <section id="chart">
+        <section id="chart" class="animate__animated animate__fadeInUp">
             <h2>Sample Data Representation</h2>
             <div class="chart-container">
                 <canvas id="accuracyChart"></canvas>
@@ -205,7 +225,7 @@
         </section>
 
         <!-- Example of Machine Learning in Action -->
-        <section id="performance">
+        <section id="performance" class="animate__animated animate__fadeInUp">
             <h2>Machine Learning Model Performance Comparison</h2>
             <p>Statistical measures such as accuracy, precision, and recall help in evaluating the performance of models.</p>
             <img src="https://github.com/yourusername/yourrepo/raw/main/images/performance_graph.jpg" alt="Performance Metrics Graph" style="width:100%; max-width:600px;">
