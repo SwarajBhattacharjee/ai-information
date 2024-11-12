@@ -5,6 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machine Learning</title>
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #1d3557;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #1d3557;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* Chart Styling */
+        .chart {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .bar {
+            width: 20%;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding-top: 10px;
+            border-radius: 5px;
+        }
+        
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #457b9d;
+            color: white;
+        }
+
+        /* Image Styling */
+        img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Link Styling */
+        footer a {
+            color: #f1faee;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -15,6 +88,7 @@
         <!-- Introductory paragraph -->
         <section>
             <p>Machine Learning is a subset of Artificial Intelligence that focuses on building systems capable of learning from data to make predictions, classify information, or enhance decision-making processes. Through machine learning, computers can improve their accuracy and efficiency by recognizing patterns and making adjustments based on new data.</p>
+            <img src="images/ml_intro.jpg" alt="Illustration of Machine Learning Concepts" style="width:100%; max-width:600px;">
         </section>
 
         <!-- Key Concepts -->
@@ -26,6 +100,7 @@
                 <li><strong>Model Training:</strong> The process of feeding data to a machine learning algorithm to enable it to make predictions.</li>
                 <li><strong>Evaluation:</strong> Assessing the model's performance through metrics such as accuracy, precision, and recall.</li>
             </ul>
+            <img src="images/ml_key_concepts.jpg" alt="Key Concepts Diagram" style="width:100%; max-width:600px;">
         </section>
 
         <!-- Types of Machine Learning Algorithms -->
@@ -69,20 +144,6 @@
                 <div class="bar" style="height: 70%; background-color: #f44336;">K-Means - 70%</div>
                 <div class="bar" style="height: 85%; background-color: #FF9800;">Neural Network - 85%</div>
             </div>
-            <style>
-                .chart {
-                    display: flex;
-                    justify-content: space-around;
-                    margin: 20px 0;
-                }
-                .bar {
-                    width: 20%;
-                    text-align: center;
-                    color: white;
-                    font-weight: bold;
-                    padding-top: 10px;
-                }
-            </style>
         </section>
 
         <!-- Placeholder for an Image -->
@@ -105,4 +166,3 @@
     </footer>
 </body>
 </html>
-
