@@ -13,6 +13,7 @@
             color: #333;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
         header, footer {
             background-color: #1d3557;
@@ -20,8 +21,8 @@
             padding: 20px;
             text-align: center;
         }
-        h1, h2 {
-            color: #1d3557;
+        header h1, h2 {
+            animation: fadeIn 1s ease-in-out;
         }
         main {
             padding: 20px;
@@ -29,26 +30,36 @@
             margin: auto;
         }
 
-        /* Chart Styling */
-        .chart {
+        /* Navbar */
+        .navbar {
             display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
+            justify-content: center;
+            gap: 20px;
+            background-color: #457b9d;
+            padding: 10px 0;
         }
-        .bar {
-            width: 20%;
-            text-align: center;
-            color: white;
+        .navbar a {
+            color: #f1faee;
+            text-decoration: none;
             font-weight: bold;
-            padding-top: 10px;
-            border-radius: 5px;
+            transition: color 0.3s;
         }
-        
+        .navbar a:hover {
+            color: #a8dadc;
+        }
+
+        /* Chart Styling */
+        .chart-container {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
         /* Table Styling */
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
+            animation: fadeInUp 1s ease-in-out;
         }
         th, td {
             border: 1px solid #ddd;
@@ -59,6 +70,9 @@
             background-color: #457b9d;
             color: white;
         }
+        tr:hover {
+            background-color: #f1faee;
+        }
 
         /* Image Styling */
         img {
@@ -66,6 +80,10 @@
             margin: 20px auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.05);
         }
 
         /* Footer Link Styling */
@@ -77,22 +95,42 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#intro">Introduction</a>
+        <a href="#concepts">Key Concepts</a>
+        <a href="#types">Algorithms</a>
+        <a href="#chart">Data Chart</a>
+        <a href="#performance">Performance</a>
+    </div>
+
     <header>
         <h1>Machine Learning</h1>
     </header>
 
     <main>
         <!-- Introductory paragraph -->
-        <section>
-            <p>Machine Learning is a subset of Artificial Intelligence that focuses on building systems capable of learning from data to make predictions, classify information, or enhance decision-making processes. Through machine learning, computers can improve their accuracy and efficiency by recognizing patterns and making adjustments based on new data.</p>
-            <img src="images/ml_intro.jpg" alt="Illustration of Machine Learning Concepts" style="width:100%; max-width:600px;">
+        <section id="intro">
+            <p>Machine Learning is a subset of Artificial Intelligence that focuses on building systems capable of learning from data to make predictions, classify information, or enhance decision-making processes.</p>
+            <img src="https://github.com/yourusername/yourrepo/raw/main/images/ml_intro.jpg" alt="Illustration of Machine Learning Concepts" style="width:100%; max-width:600px;">
         </section>
 
         <!-- Key Concepts -->
-        <section>
+        <section id="concepts">
             <h2>Key Concepts in Machine Learning</h2>
             <ul>
                 <li><strong>Data:</strong> The core of machine learning is data, which serves as the foundation for training algorithms.</li>
@@ -100,11 +138,11 @@
                 <li><strong>Model Training:</strong> The process of feeding data to a machine learning algorithm to enable it to make predictions.</li>
                 <li><strong>Evaluation:</strong> Assessing the model's performance through metrics such as accuracy, precision, and recall.</li>
             </ul>
-            <img src="images/ml_key_concepts.jpg" alt="Key Concepts Diagram" style="width:100%; max-width:600px;">
+            <img src="https://github.com/yourusername/yourrepo/raw/main/images/ml_key_concepts.jpg" alt="Key Concepts Diagram" style="width:100%; max-width:600px;">
         </section>
 
         <!-- Types of Machine Learning Algorithms -->
-        <section>
+        <section id="types">
             <h2>Types of Machine Learning Algorithms</h2>
             <table>
                 <thead>
@@ -134,30 +172,43 @@
             </table>
         </section>
 
-        <!-- Data Representation: Sample Chart -->
-        <section>
+        <!-- Sample Chart with Chart.js -->
+        <section id="chart">
             <h2>Sample Data Representation</h2>
-            <p>Below is a simple bar chart representing the accuracy of different machine learning algorithms:</p>
-            <div class="chart">
-                <div class="bar" style="height: 80%; background-color: #4CAF50;">Decision Tree - 80%</div>
-                <div class="bar" style="height: 90%; background-color: #2196F3;">SVM - 90%</div>
-                <div class="bar" style="height: 70%; background-color: #f44336;">K-Means - 70%</div>
-                <div class="bar" style="height: 85%; background-color: #FF9800;">Neural Network - 85%</div>
+            <div class="chart-container">
+                <canvas id="accuracyChart"></canvas>
             </div>
+            <script>
+                const ctx = document.getElementById('accuracyChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Decision Tree', 'SVM', 'K-Means', 'Neural Network'],
+                        datasets: [{
+                            label: 'Accuracy %',
+                            data: [80, 90, 70, 85],
+                            backgroundColor: ['#4CAF50', '#2196F3', '#f44336', '#FF9800'],
+                            borderRadius: 5
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100
+                            }
+                        }
+                    }
+                });
+            </script>
         </section>
 
-        <!-- Placeholder for an Image -->
-        <section>
-            <h2>Example of Machine Learning in Action</h2>
-            <p>Below is an example of a neural network used in image classification.</p>
-            <img src="images/neural_network_example.jpg" alt="Example of a Neural Network" style="width:100%; max-width:600px;">
-        </section>
-
-        <!-- Graphs and Statistical Analysis -->
-        <section>
+        <!-- Example of Machine Learning in Action -->
+        <section id="performance">
             <h2>Machine Learning Model Performance Comparison</h2>
-            <p>Statistical measures such as accuracy, precision, and recall help in evaluating the performance of models. Here’s a graph comparing these metrics:</p>
-            <img src="images/performance_graph.jpg" alt="Performance Metrics Graph" style="width:100%; max-width:600px;">
+            <p>Statistical measures such as accuracy, precision, and recall help in evaluating the performance of models.</p>
+            <img src="https://github.com/yourusername/yourrepo/raw/main/images/performance_graph.jpg" alt="Performance Metrics Graph" style="width:100%; max-width:600px;">
         </section>
     </main>
 
