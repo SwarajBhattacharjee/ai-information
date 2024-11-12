@@ -2,12 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neural Networks</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <h1>Neural Networks</h1>
-    <p>Neural Networks are computational models inspired by the human brain...</p>
+    <header>
+        <h1>Neural Networks</h1>
+    </header>
+
+    <main>
+        <!-- Introduction to Neural Networks -->
+        <section>
+            <p>Neural Networks are computational models inspired by the structure and function of the human brain. They consist of interconnected nodes (neurons) organized in layers, allowing the model to learn complex patterns and relationships in data.</p>
+        </section>
+
+        <!-- Key Concepts of Neural Networks -->
+        <section>
+            <h2>Key Concepts in Neural Networks</h2>
+            <ul>
+                <li><strong>Neuron:</strong> The basic unit in a neural network, which processes input and generates output.</li>
+                <li><strong>Layers:</strong> Neural networks are composed of multiple layers: input, hidden, and output layers.</li>
+                <li><strong>Activation Function:</strong> A function that determines whether a neuron should activate, based on input.</li>
+                <li><strong>Weights and Biases:</strong> Parameters that are adjusted during training to minimize prediction error.</li>
+                <li><strong>Backpropagation:</strong> A process used to update weights and biases to reduce the model's error.</li>
+            </ul>
+        </section>
+
+        <!-- Types of Neural Networks -->
+        <section>
+            <h2>Types of Neural Networks</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Applications</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Feedforward Neural Network (FNN)</td>
+                        <td>Information flows in one direction, from input to output.</td>
+                        <td>Image classification, speech recognition</td>
+                    </tr>
+                    <tr>
+                        <td>Convolutional Neural Network (CNN)</td>
+                        <td>Uses convolutional layers for feature extraction, ideal for image data.</td>
+                        <td>Image and video analysis, facial recognition</td>
+                    </tr>
+                    <tr>
+                        <td>Recurrent Neural Network (RNN)</td>
+                        <td>Uses loops to handle sequential data, remembering past information.</td>
+                        <td>Natural language processing, time series prediction</td>
+                    </tr>
+                    <tr>
+                        <td>Generative Adversarial Network (GAN)</td>
+                        <td>Contains two networks (generator and discriminator) in a game-like structure.</td>
+                        <td>Image generation, deepfake creation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Neural Network Structure: Graph Representation -->
+        <section>
+            <h2>Neural Network Structure</h2>
+            <p>The following diagram represents a basic neural network structure with an input layer, hidden layers, and an output layer:</p>
+            <img src="images/neural_network_structure.png" alt="Neural Network Structure" style="width:100%; max-width:600px;">
+            <p>This diagram illustrates how information passes through neurons in layers. Each layer processes the data, extracting features before passing it to the next layer.</p>
+        </section>
+
+        <!-- Sample Data: Accuracy of Neural Networks -->
+        <section>
+            <h2>Performance Comparison of Different Neural Networks</h2>
+            <p>Below is a bar chart showing the accuracy of different neural network models:</p>
+            <div class="chart">
+                <div class="bar" style="height: 85%; background-color: #4CAF50;">CNN - 85%</div>
+                <div class="bar" style="height: 80%; background-color: #2196F3;">RNN - 80%</div>
+                <div class="bar" style="height: 75%; background-color: #f44336;">FNN - 75%</div>
+                <div class="bar" style="height: 88%; background-color: #FF9800;">GAN - 88%</div>
+            </div>
+            <style>
+                .chart {
+                    display: flex;
+                    justify-content: space-around;
+                    margin: 20px 0;
+                }
+                .bar {
+                    width: 20%;
+                    text-align: center;
+                    color: white;
+                    font-weight: bold;
+                    padding-top: 10px;
+                }
+            </style>
+        </section>
+
+        <!-- Neural Network Training Process -->
+        <section>
+            <h2>Training Process of Neural Networks</h2>
+            <p>Training a neural network involves feeding it large amounts of data, adjusting weights and biases through backpropagation, and optimizing performance using an algorithm like gradient descent.</p>
+            <img src="images/training_process.jpg" alt="Neural Network Training Process" style="width:100%; max-width:600px;">
+            <p>This image illustrates the iterative process of training a neural network to improve its performance.</p>
+        </section>
+
+        <!-- Additional Resources -->
+        <section>
+            <h2>Further Reading and Resources</h2>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Neural_network" target="_blank">Wikipedia: Neural Networks</a></li>
+                <li><a href="https://www.ibm.com/cloud/learn/neural-networks" target="_blank">IBM: Neural Networks Explained</a></li>
+                <li><a href="https://www.tensorflow.org/learn" target="_blank">TensorFlow: Neural Network Tutorials</a></li>
+            </ul>
+        </section>
+    </main>
+
     <footer>
         <a href="contact.html">Contact Us</a>
     </footer>
