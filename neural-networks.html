@@ -5,20 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neural Networks</title>
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        header {
+            text-align: center;
+            padding: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-out;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        main {
+            padding: 1.5rem;
+        }
+        section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Styling table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            animation: fadeInUp 1.5s;
+        }
+        th, td {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td:nth-child(3) {
+            color: #666;
+        }
+
+        /* Chart styling */
+        .chart {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .bar {
+            width: 20%;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding-top: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .bar:hover {
+            transform: scale(1.1);
+            background-color: #333;
+        }
+
+        /* Button styling */
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .read-more-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Neural Networks</h1>
+        <p>Explore the fundamentals of neural networks and their applications.</p>
     </header>
 
     <main>
         <!-- Introduction to Neural Networks -->
         <section>
+            <h2>Introduction</h2>
             <p>Neural Networks are computational models inspired by the structure and function of the human brain. They consist of interconnected nodes (neurons) organized in layers, allowing the model to learn complex patterns and relationships in data.</p>
+            <a href="#key-concepts" class="read-more-btn">Learn More</a>
         </section>
 
         <!-- Key Concepts of Neural Networks -->
-        <section>
+        <section id="key-concepts">
             <h2>Key Concepts in Neural Networks</h2>
             <ul>
                 <li><strong>Neuron:</strong> The basic unit in a neural network, which processes input and generates output.</li>
@@ -69,7 +174,7 @@
         <section>
             <h2>Neural Network Structure</h2>
             <p>The following diagram represents a basic neural network structure with an input layer, hidden layers, and an output layer:</p>
-            <img src="images/neural_network_structure.png" alt="Neural Network Structure" style="width:100%; max-width:600px;">
+            <img src="images/neural_network_structure.png" alt="Neural Network Structure" style="width:100%; max-width:600px; border-radius:8px;">
             <p>This diagram illustrates how information passes through neurons in layers. Each layer processes the data, extracting features before passing it to the next layer.</p>
         </section>
 
@@ -83,27 +188,13 @@
                 <div class="bar" style="height: 75%; background-color: #f44336;">FNN - 75%</div>
                 <div class="bar" style="height: 88%; background-color: #FF9800;">GAN - 88%</div>
             </div>
-            <style>
-                .chart {
-                    display: flex;
-                    justify-content: space-around;
-                    margin: 20px 0;
-                }
-                .bar {
-                    width: 20%;
-                    text-align: center;
-                    color: white;
-                    font-weight: bold;
-                    padding-top: 10px;
-                }
-            </style>
         </section>
 
         <!-- Neural Network Training Process -->
         <section>
             <h2>Training Process of Neural Networks</h2>
             <p>Training a neural network involves feeding it large amounts of data, adjusting weights and biases through backpropagation, and optimizing performance using an algorithm like gradient descent.</p>
-            <img src="images/training_process.jpg" alt="Neural Network Training Process" style="width:100%; max-width:600px;">
+            <img src="images/training_process.jpg" alt="Neural Network Training Process" style="width:100%; max-width:600px; border-radius:8px;">
             <p>This image illustrates the iterative process of training a neural network to improve its performance.</p>
         </section>
 
