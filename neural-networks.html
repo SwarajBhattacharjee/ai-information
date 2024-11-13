@@ -21,7 +21,6 @@
             background-color: #4CAF50;
             color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 2s ease-out;
         }
         h1, h2 {
             color: #333;
@@ -35,10 +34,6 @@
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        section:hover {
-            transform: translateY(-10px);
         }
 
         /* Styling table */
@@ -46,7 +41,6 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 1rem;
-            animation: fadeInUp 1.5s;
         }
         th, td {
             padding: 0.75rem;
@@ -66,6 +60,8 @@
             display: flex;
             justify-content: space-around;
             margin: 20px 0;
+            align-items: flex-end;
+            height: 200px;
         }
         .bar {
             width: 20%;
@@ -73,7 +69,7 @@
             color: white;
             font-weight: bold;
             padding-top: 10px;
-            border-radius: 8px;
+            border-radius: 8px 8px 0 0;
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
         .bar:hover {
@@ -97,14 +93,18 @@
             background-color: #45a049;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeInUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        /* Placeholder images */
+        .placeholder-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eee;
+            color: #555;
+            height: 200px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
         }
     </style>
 </head>
@@ -174,7 +174,7 @@
         <section>
             <h2>Neural Network Structure</h2>
             <p>The following diagram represents a basic neural network structure with an input layer, hidden layers, and an output layer:</p>
-            <img src="images/neural_network_structure.png" alt="Neural Network Structure" style="width:100%; max-width:600px; border-radius:8px;">
+            <div class="placeholder-image">[Neural Network Structure Diagram]</div>
             <p>This diagram illustrates how information passes through neurons in layers. Each layer processes the data, extracting features before passing it to the next layer.</p>
         </section>
 
@@ -194,7 +194,7 @@
         <section>
             <h2>Training Process of Neural Networks</h2>
             <p>Training a neural network involves feeding it large amounts of data, adjusting weights and biases through backpropagation, and optimizing performance using an algorithm like gradient descent.</p>
-            <img src="images/training_process.jpg" alt="Neural Network Training Process" style="width:100%; max-width:600px; border-radius:8px;">
+            <div class="placeholder-image">[Training Process Visualization]</div>
             <p>This image illustrates the iterative process of training a neural network to improve its performance.</p>
         </section>
 
