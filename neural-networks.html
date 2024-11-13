@@ -55,20 +55,24 @@
             color: #666;
         }
 
-        /* Chart styling */
+        /* Bar Chart Styling */
         .chart-container {
-            position: relative;
-            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            margin: 20px 0;
+            max-width: 600px;
+            margin: 20px auto;
         }
         .chart {
             display: flex;
             justify-content: space-around;
             align-items: flex-end;
-            height: 100%;
+            height: 250px;
+            width: 100%;
+            margin-top: 10px;
             position: relative;
-            margin-bottom: 30px; /* Room for X-axis */
+            padding-bottom: 20px; /* Space for X-axis labels */
         }
         .bar {
             width: 20%;
@@ -83,27 +87,53 @@
             transform: scale(1.1);
             background-color: #333;
         }
-        .bar-label {
-            position: absolute;
-            bottom: 0;
+        .bar-value {
+            position: relative;
+            top: -20px;
+            color: #000;
+        }
+        .x-axis-labels {
+            display: flex;
+            justify-content: space-around;
             width: 100%;
-            text-align: center;
+            margin-top: 5px;
             color: #333;
-            font-weight: bold;
-            margin-top: 8px;
         }
         .y-axis {
             position: absolute;
-            left: 0;
+            left: 10px;
             top: 0;
             height: 100%;
             width: 30px;
             text-align: right;
             margin-right: 10px;
             color: #666;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Neural Network Structure Styling */
+        .tree-svg {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .layer-label {
+            font-size: 0.9rem;
+            font-weight: bold;
+            fill: #333;
         }
 
-        /* Button styling */
+        /* Training Process Flowchart */
+        .training-process-svg {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Interactive Button Styling */
         .read-more-btn {
             display: inline-block;
             margin-top: 1rem;
@@ -117,14 +147,6 @@
         }
         .read-more-btn:hover {
             background-color: #45a049;
-        }
-
-        /* Tree visualization and SVG styling */
-        .tree-svg, .training-process-svg {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto;
         }
     </style>
 </head>
@@ -193,73 +215,93 @@
         <!-- Neural Network Structure Visualization -->
         <section>
             <h2>Neural Network Structure</h2>
-            <p>The following diagram represents a basic neural network structure with an input layer, hidden layers, and an output layer:</p>
-            <svg class="tree-svg" width="600" height="300" viewBox="0 0 600 300">
-                <!-- Input layer -->
-                <circle cx="100" cy="150" r="20" fill="#4CAF50"></circle>
-                <circle cx="100" cy="90" r="20" fill="#4CAF50"></circle>
-                <circle cx="100" cy="210" r="20" fill="#4CAF50"></circle>
-                <!-- Hidden layer -->
-                <circle cx="300" cy="90" r="20" fill="#FF9800"></circle>
+            <svg class="tree-svg" width="700" height="400" viewBox="0 0 700 400">
+                <!-- Layer labels -->
+                <text x="50" y="20" class="layer-label">Input Layer</text>
+                <text x="300" y="20" class="layer-label">Hidden Layer</text>
+                <text x="550" y="20" class="layer-label">Output Layer</text>
+
+                <!-- Input layer circles -->
+                <circle cx="100" cy="100" r="20" fill="#4CAF50"></circle>
+                <circle cx="100" cy="200" r="20" fill="#4CAF50"></circle>
+                <circle cx="100" cy="300" r="20" fill="#4CAF50"></circle>
+
+                <!-- Hidden layer circles -->
+                <circle cx="300" cy="50" r="20" fill="#FF9800"></circle>
                 <circle cx="300" cy="150" r="20" fill="#FF9800"></circle>
-                <circle cx="300" cy="210" r="20" fill="#FF9800"></circle>
-                <!-- Output layer -->
-                <circle cx="500" cy="150" r="20" fill="#2196F3"></circle>
+                <circle cx="300" cy="250" r="20" fill="#FF9800"></circle>
+                <circle cx="300" cy="350" r="20" fill="#FF9800"></circle>
+
+                <!-- Output layer circles -->
+                <circle cx="500" cy="200" r="20" fill="#2196F3"></circle>
+
                 <!-- Connections -->
-                <line x1="120" y1="90" x2="280" y2="90" stroke="#ccc" />
-                <line x1="120" y1="150" x2="280" y2="150" stroke="#ccc" />
-                <line x1="120" y1="210" x2="280" y2="210" stroke="#ccc" />
-                <line x1="320" y1="90" x2="480" y2="150" stroke="#ccc" />
-                <line x1="320" y1="150" x2="480" y2="150" stroke="#ccc" />
-                <line x1="320" y1="210" x2="480" y2="150" stroke="#ccc" />
+                <line x1="120" y1="100" x2="280" y2="50" stroke="#ccc" />
+                <line x1="120" y1="100" x2="280" y2="150" stroke="#ccc" />
+                <line x1="120" y1="200" x2="280" y2="50" stroke="#ccc" />
+                <line x1="120" y1="200" x2="280" y2="250" stroke="#ccc" />
+                <line x1="120" y1="300" x2="280" y2="250" stroke="#ccc" />
+                <line x1="320" y1="50" x2="480" y2="200" stroke="#ccc" />
+                <line x1="320" y1="150" x2="480" y2="200" stroke="#ccc" />
+                <line x1="320" y1="250" x2="480" y2="200" stroke="#ccc" />
+                <line x1="320" y1="350" x2="480" y2="200" stroke="#ccc" />
             </svg>
-            <p>This diagram illustrates how information passes through neurons in layers. Each layer processes the data, extracting features before passing it to the next layer.</p>
+            <p>This diagram represents the basic structure of a neural network, with layers annotated and more complex connections between neurons.</p>
         </section>
 
-        <!-- Performance Comparison Chart -->
+        <!-- Enhanced Bar Chart with Axis Labels -->
         <section>
             <h2>Performance Comparison of Different Neural Networks</h2>
-            <p>Below is a bar chart showing the accuracy of different neural network models:</p>
             <div class="chart-container">
-                <div class="y-axis">
-                    <div>100%</div>
-                    <div>80%</div>
-                    <div>60%</div>
-                    <div>40%</div>
-                    <div>20%</div>
-                    <div>0%</div>
-                </div>
                 <div class="chart">
-                    <div class="bar" style="height: 85%; background-color: #4CAF50;">85%</div>
-                    <div class="bar" style="height: 80%; background-color: #2196F3;">80%</div>
-                    <div class="bar" style="height: 75%; background-color: #f44336;">75%</div>
-                    <div class="bar" style="height: 88%; background-color: #FF9800;">88%</div>
+                    <div class="y-axis">
+                        <div>100%</div>
+                        <div>80%</div>
+                        <div>60%</div>
+                        <div>40%</div>
+                        <div>20%</div>
+                        <div>0%</div>
+                    </div>
+                    <div class="bar" style="height: 85%; background-color: #4CAF50;">
+                        <div class="bar-value">85%</div>
+                    </div>
+                    <div class="bar" style="height: 80%; background-color: #2196F3;">
+                        <div class="bar-value">80%</div>
+                    </div>
+                    <div class="bar" style="height: 75%; background-color: #f44336;">
+                        <div class="bar-value">75%</div>
+                    </div>
+                    <div class="bar" style="height: 88%; background-color: #FF9800;">
+                        <div class="bar-value">88%</div>
+                    </div>
                 </div>
-                <div class="bar-labels">
-                    <div class="bar-label">CNN</div>
-                    <div class="bar-label">RNN</div>
-                    <div class="bar-label">FNN</div>
-                    <div class="bar-label">GAN</div>
+                <div class="x-axis-labels">
+                    <span>CNN</span>
+                    <span>RNN</span>
+                    <span>FNN</span>
+                    <span>GAN</span>
                 </div>
             </div>
         </section>
 
-        <!-- Neural Network Training Process Visualization -->
+        <!-- Interactive Training Process Flowchart -->
         <section>
             <h2>Training Process of Neural Networks</h2>
-            <p>Training a neural network involves feeding it large amounts of data, adjusting weights and biases through backpropagation, and optimizing performance using an algorithm like gradient descent.</p>
-            <svg class="training-process-svg" width="600" height="300" viewBox="0 0 600 300">
-                <!-- Process steps -->
-                <rect x="50" y="100" width="100" height="50" fill="#4CAF50" />
-                <text x="100" y="130" font-size="12" fill="white" text-anchor="middle">Data Input</text>
-                <line x1="150" y1="125" x2="250" y2="125" stroke="#333" marker-end="url(#arrow)" />
-                <rect x="250" y="100" width="100" height="50" fill="#FF9800" />
-                <text x="300" y="130" font-size="12" fill="white" text-anchor="middle">Training</text>
-                <line x1="350" y1="125" x2="450" y2="125" stroke="#333" marker-end="url(#arrow)" />
-                <rect x="450" y="100" width="100" height="50" fill="#2196F3" />
-                <text x="500" y="130" font-size="12" fill="white" text-anchor="middle">Prediction</text>
+            <svg class="training-process-svg" width="700" height="200" viewBox="0 0 700 200">
+                <!-- Process Steps with Interactive Styling -->
+                <rect x="50" y="75" width="100" height="50" fill="#4CAF50" rx="10" ry="10" />
+                <text x="100" y="105" font-size="12" fill="white" text-anchor="middle">Data Input</text>
+                <line x1="150" y1="100" x2="250" y2="100" stroke="#333" marker-end="url(#arrow)" />
+                <rect x="250" y="75" width="100" height="50" fill="#FF9800" rx="10" ry="10" />
+                <text x="300" y="105" font-size="12" fill="white" text-anchor="middle">Training</text>
+                <line x1="350" y1="100" x2="450" y2="100" stroke="#333" marker-end="url(#arrow)" />
+                <rect x="450" y="75" width="100" height="50" fill="#2196F3" rx="10" ry="10" />
+                <text x="500" y="105" font-size="12" fill="white" text-anchor="middle">Evaluation</text>
+                <line x1="550" y1="100" x2="650" y2="100" stroke="#333" marker-end="url(#arrow)" />
+                <rect x="650" y="75" width="100" height="50" fill="#8E44AD" rx="10" ry="10" />
+                <text x="700" y="105" font-size="12" fill="white" text-anchor="middle">Prediction</text>
             </svg>
-            <p>This flowchart represents the iterative training process of a neural network.</p>
+            <p>This flowchart illustrates the more interactive, step-by-step training process of a neural network.</p>
         </section>
 
         <!-- Additional Resources -->
