@@ -3,232 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Learning</title>
+    <title>Neural Networks</title>
     <link rel="stylesheet" href="styles/style.css">
-    <!-- Link to Animate.css for scroll animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- Link to Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General Styling */
+        /* Basic styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
             color: #333;
             margin: 0;
             padding: 0;
-            scroll-behavior: smooth;
+            line-height: 1.6;
+            background-color: #f5f5f5;
         }
-        header, footer {
-            background-color: #1d3557;
-            color: white;
-            padding: 20px;
+        header {
             text-align: center;
+            padding: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        header h1, h2 {
-            animation: fadeIn 1s ease-in-out;
+        h1, h2 {
+            color: #333;
         }
         main {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
+            padding: 1.5rem;
+        }
+        section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            background-color: #457b9d;
-            padding: 10px 0;
-        }
-        .navbar a {
-            color: #f1faee;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        .navbar a:hover {
-            color: #a8dadc;
-        }
-
-        /* Key Concepts with Icons */
-        .concept-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .concept-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.1em;
-            color: #1d3557;
-        }
-        .concept-item i {
-            font-size: 1.5em;
-            color: #457b9d;
-            transition: transform 0.3s;
-        }
-        .concept-item i:hover {
-            transform: scale(1.2);
-        }
-
-        /* Table Styling */
+        /* Styling table */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            animation: fadeInUp 1s ease-in-out;
+            margin-top: 1rem;
         }
         th, td {
+            padding: 0.75rem;
             border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
+            text-align: center;
         }
         th {
-            background-color: #457b9d;
+            background-color: #4CAF50;
             color: white;
         }
-        tr:hover {
-            background-color: #f1faee;
+        td:nth-child(3) {
+            color: #666;
         }
 
-        /* Image Styling */
-        img {
-            display: block;
+        /* Bar Chart Styling */
+        .chart-container {
+            display: flex;
+            align-items: flex-end;
+            max-width: 600px;
             margin: 20px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
         }
-        img:hover {
-            transform: scale(1.05);
+        .y-axis {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-right: 10px;
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 2;
+        }
+        .chart {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 250px;
+            width: 100%;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .bar {
+            width: 18%;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding-top: 10px;
+            border-radius: 8px 8px 0 0;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .bar:hover {
+            transform: scale(1.1);
+            background-color: #333;
+        }
+        .bar-value {
+            position: relative;
+            top: -20px;
+            color: #000;
+        }
+        .x-axis-labels {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 5px;
+            color: #333;
         }
 
-        /* Footer Link Styling */
-        footer a {
-            color: #f1faee;
+        /* Neural Network Structure Styling */
+        .tree-svg {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .layer-label {
+            font-size: 0.9rem;
+            font-weight: bold;
+            fill: #333;
+        }
+
+        /* Training Process Flowchart */
+        .training-process-svg {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Interactive Button Styling */
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
+            transition: background-color 0.3s ease;
         }
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .read-more-btn:hover {
+            background-color: #45a049;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <!-- Navbar -->
-    <div class="navbar">
-        <a href="#intro">Introduction</a>
-        <a href="#concepts">Key Concepts</a>
-        <a href="#types">Algorithms</a>
-        <a href="#chart">Data Chart</a>
-        <a href="#performance">Performance</a>
-    </div>
-
     <header>
-        <h1>Machine Learning</h1>
+        <h1>Neural Networks</h1>
+        <p>Explore the fundamentals of neural networks and their applications.</p>
     </header>
 
     <main>
-        <!-- Introductory paragraph -->
-        <section id="intro" class="animate__animated animate__fadeIn">
-            <p>Machine Learning is a subset of Artificial Intelligence that focuses on building systems capable of learning from data to make predictions, classify information, or enhance decision-making processes.</p>
-            <img src="https://pixabay.com/illustrations/ai-generated-artificial-intelligence-8540920/" alt="Illustration of Machine Learning Concepts" style="width:100%; max-width:600px;">
+        <!-- Introduction to Neural Networks -->
+        <section>
+            <h2>Introduction</h2>
+            <p>Neural Networks are computational models inspired by the structure and function of the human brain. They consist of interconnected nodes (neurons) organized in layers, allowing the model to learn complex patterns and relationships in data.</p>
+            <a href="#key-concepts" class="read-more-btn">Learn More</a>
         </section>
 
-        <!-- Key Concepts -->
-        <section id="concepts" class="animate__animated animate__fadeInUp">
-            <h2>Key Concepts in Machine Learning</h2>
-            <ul class="concept-list">
-                <li class="concept-item"><i class="fas fa-database"></i><strong>Data:</strong> The core of machine learning is data, which serves as the foundation for training algorithms.</li>
-                <li class="concept-item"><i class="fas fa-cogs"></i><strong>Algorithms:</strong> Instructions or sequences that allow machines to find patterns or classify data.</li>
-                <li class="concept-item"><i class="fas fa-brain"></i><strong>Model Training:</strong> The process of feeding data to a machine learning algorithm to enable it to make predictions.</li>
-                <li class="concept-item"><i class="fas fa-chart-line"></i><strong>Evaluation:</strong> Assessing the model's performance through metrics such as accuracy, precision, and recall.</li>
+        <!-- Key Concepts of Neural Networks -->
+        <section id="key-concepts">
+            <h2>Key Concepts in Neural Networks</h2>
+            <ul>
+                <li><strong>Neuron:</strong> The basic unit in a neural network, which processes input and generates output.</li>
+                <li><strong>Layers:</strong> Neural networks are composed of multiple layers: input, hidden, and output layers.</li>
+                <li><strong>Activation Function:</strong> A function that determines whether a neuron should activate, based on input.</li>
+                <li><strong>Weights and Biases:</strong> Parameters that are adjusted during training to minimize prediction error.</li>
+                <li><strong>Backpropagation:</strong> A process used to update weights and biases to reduce the model's error.</li>
             </ul>
-            <img src="https://github.com/yourusername/yourrepo/raw/main/images/ml_key_concepts.jpg" alt="Key Concepts Diagram" style="width:100%; max-width:600px;">
         </section>
 
-        <!-- Types of Machine Learning Algorithms -->
-        <section id="types" class="animate__animated animate__fadeInUp">
-            <h2>Types of Machine Learning Algorithms</h2>
+        <!-- Types of Neural Networks -->
+        <section>
+            <h2>Types of Neural Networks</h2>
             <table>
                 <thead>
                     <tr>
                         <th>Type</th>
                         <th>Description</th>
-                        <th>Example Algorithms</th>
+                        <th>Applications</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Supervised Learning</td>
-                        <td>Trained on labeled data to make predictions or classify data into specific categories.</td>
-                        <td>Linear Regression, Decision Trees, Support Vector Machines</td>
+                        <td>Feedforward Neural Network (FNN)</td>
+                        <td>Information flows in one direction, from input to output.</td>
+                        <td>Image classification, speech recognition</td>
                     </tr>
                     <tr>
-                        <td>Unsupervised Learning</td>
-                        <td>Finds patterns in unlabeled data without predefined categories.</td>
-                        <td>K-means Clustering, Principal Component Analysis</td>
+                        <td>Convolutional Neural Network (CNN)</td>
+                        <td>Uses convolutional layers for feature extraction, ideal for image data.</td>
+                        <td>Image and video analysis, facial recognition</td>
                     </tr>
                     <tr>
-                        <td>Reinforcement Learning</td>
-                        <td>Teaches a model to make a series of decisions based on rewards or penalties.</td>
-                        <td>Q-Learning, Deep Q Networks</td>
+                        <td>Recurrent Neural Network (RNN)</td>
+                        <td>Uses loops to handle sequential data, remembering past information.</td>
+                        <td>Natural language processing, time series prediction</td>
+                    </tr>
+                    <tr>
+                        <td>Generative Adversarial Network (GAN)</td>
+                        <td>Contains two networks (generator and discriminator) in a game-like structure.</td>
+                        <td>Image generation, deepfake creation</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <!-- Sample Chart with Chart.js -->
-        <section id="chart" class="animate__animated animate__fadeInUp">
-            <h2>Sample Data Representation</h2>
-            <div class="chart-container">
-                <canvas id="accuracyChart"></canvas>
-            </div>
-            <script>
-                const ctx = document.getElementById('accuracyChart').getContext('2d');
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Decision Tree', 'SVM', 'K-Means', 'Neural Network'],
-                        datasets: [{
-                            label: 'Accuracy %',
-                            data: [80, 90, 70, 85],
-                            backgroundColor: ['#4CAF50', '#2196F3', '#f44336', '#FF9800'],
-                            borderRadius: 5
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                max: 100
-                            }
-                        }
-                    }
-                });
-            </script>
+        <!-- Neural Network Structure Visualization -->
+        <section>
+            <h2>Neural Network Structure</h2>
+            <svg class="tree-svg" width="700" height="400" viewBox="0 0 700 400">
+                <!-- Layer labels -->
+                <text x="50" y="20" class="layer-label">Input Layer</text>
+                <text x="300" y="20" class="layer-label">Hidden Layer</text>
+                <text x="550" y="20" class="layer-label">Output Layer</text>
+
+                <!-- Input layer circles -->
+                <circle cx="100" cy="100" r="20" fill="#4CAF50"></circle>
+                <circle cx="100" cy="200" r="20" fill="#4CAF50"></circle>
+                <circle cx="100" cy="300" r="20" fill="#4CAF50"></circle>
+
+                <!-- Hidden layer circles -->
+                <circle cx="300" cy="50" r="20" fill="#FF9800"></circle>
+                <circle cx="300" cy="150" r="20" fill="#FF9800"></circle>
+                <circle cx="300" cy="250" r="20" fill="#FF9800"></circle>
+                <circle cx="300" cy="350" r="20" fill="#FF9800"></circle>
+
+                <!-- Output layer circles -->
+                <circle cx="500" cy="200" r="20" fill="#2196F3"></circle>
+
+                <!-- Connections -->
+                <line x1="120" y1="100" x2="280" y2="50" stroke="#ccc" />
+                <line x1="120" y1="100" x2="280" y2="150" stroke="#ccc" />
+                <line x1="120" y1="200" x2="280" y2="50" stroke="#ccc" />
+                <line x1="120" y1="200" x2="280" y2="250" stroke="#ccc" />
+                <line x1="120" y1="300" x2="280" y2="250" stroke="#ccc" />
+                <line x1="320" y1="50" x2="480" y2="200" stroke="#ccc" />
+                <line x1="320" y1="150" x2="480" y2="200" stroke="#ccc" />
+                <line x1="320" y1="250" x2="480" y2="200" stroke="#ccc" />
+                <line x1="320" y1="350" x2="480" y2="200" stroke="#ccc" />
+            </svg>
+            <p>This diagram represents the basic structure of a neural network, with layers annotated and more complex connections between neurons.</p>
         </section>
 
-        <!-- Example of Machine Learning in Action -->
-        <section id="performance" class="animate__animated animate__fadeInUp">
-            <h2>Machine Learning Model Performance Comparison</h2>
-            <p>Statistical measures such as accuracy, precision, and recall help in evaluating the performance of models.</p>
-            <img src="https://github.com/yourusername/yourrepo/raw/main/images/performance_graph.jpg" alt="Performance Metrics Graph" style="width:100%; max-width:600px;">
+        <!-- Enhanced Bar Chart with Axis Labels -->
+        <section>
+            <h2>Performance Comparison of Different Neural Networks</h2>
+            <div class="chart-container">
+                <div class="y-axis">
+                    <span>100%</span>
+                    <span>80%</span>
+                    <span>60%</span>
+                    <span>40%</span>
+                    <span>20%</span>
+                    <span>0%</span>
+                </div>
+                <div class="chart">
+                    <div class="bar" style="height: 85%; background-color: #4CAF50;">
+                        <div class="bar-value">85%</div>
+                    </div>
+                    <div class="bar" style="height: 80%; background-color: #2196F3;">
+                        <div class="bar-value">80%</div>
+                    </div>
+                    <div class="bar" style="height: 75%; background-color: #f44336;">
+                        <div class="bar-value">75%</div>
+                    </div>
+                    <div class="bar" style="height: 88%; background-color: #FF9800;">
+                        <div class="bar-value">88%</div>
+                    </div>
+                </div>
+                <div class="x-axis-labels">
+                    <span>CNN</span>
+                    <span>RNN</span>
+                    <span>FNN</span>
+                    <span>GAN</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Training Process Flowchart -->
+        <section>
+            <h2>Training Process of Neural Networks</h2>
+            <svg class="training-process-svg" width="700" height="200" viewBox="0 0 700 200">
+                <!-- Process Steps with Interactive Styling -->
+                <rect x="50" y="75" width="100" height="50" fill="#4CAF50" rx="10" ry="10" />
+                <text x="100" y="105" font-size="12" fill="white" text-anchor="middle">Data Input</text>
+                <line x1="150" y1="100" x2="250" y2="100" stroke="#333" marker-end="url(#arrow)" />
+                <rect x="250" y="75" width="100" height="50" fill="#FF9800" rx="10" ry="10" />
+                <text x="300" y="105" font-size="12" fill="white" text-anchor="middle">Training</text>
+                <line x1="350" y1="100" x2="450" y2="100" stroke="#333" marker-end="url(#arrow)" />
+                <rect x="450" y="75" width="100" height="50" fill="#2196F3" rx="10" ry="10" />
+                <text x="500" y="105" font-size="12" fill="white" text-anchor="middle">Evaluation</text>
+                <line x1="550" y1="100" x2="650" y2="100" stroke="#333" marker-end="url(#arrow)" />
+                <rect x="650" y="75" width="100" height="50" fill="#8E44AD" rx="10" ry="10" />
+                <text x="700" y="105" font-size="12" fill="white" text-anchor="middle">Prediction</text>
+            </svg>
+            <p>This flowchart illustrates the more interactive, step-by-step training process of a neural network.</p>
+        </section>
+
+        <!-- Additional Resources -->
+        <section>
+            <h2>Further Reading and Resources</h2>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Neural_network" target="_blank">Wikipedia: Neural Networks</a></li>
+                <li><a href="https://www.ibm.com/cloud/learn/neural-networks" target="_blank">IBM: Neural Networks Explained</a></li>
+                <li><a href="https://www.tensorflow.org/learn" target="_blank">TensorFlow: Neural Network Tutorials</a></li>
+            </ul>
         </section>
     </main>
 
