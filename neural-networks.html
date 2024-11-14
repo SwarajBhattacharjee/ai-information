@@ -61,15 +61,16 @@
             align-items: flex-end;
             max-width: 600px;
             margin: 20px auto;
+            gap: 20px;
         }
         .y-axis {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            margin-right: 20px; /* Extra space to separate from bars */
+            margin-right: 10px; /* Reduced gap */
             font-size: 0.8rem;
             color: #666;
-            line-height: 2;
+            line-height: 2.1;
         }
         .chart {
             display: flex;
@@ -78,7 +79,7 @@
             height: 250px;
             width: 100%;
             position: relative;
-            padding-bottom: 20px;
+            padding-bottom: 30px;
         }
         .bar {
             width: 18%;
@@ -102,8 +103,14 @@
             display: flex;
             justify-content: space-around;
             width: 100%;
-            margin-top: 5px;
+            padding-top: 10px;
+            gap: 20px;
             color: #333;
+        }
+        .x-axis-labels span {
+            text-align: center;
+            flex: 1;
+            transform: translateX(-10%);
         }
 
         /* Neural Network Structure Styling */
@@ -151,99 +158,7 @@
     </header>
 
     <main>
-        <!-- Introduction to Neural Networks -->
-        <section>
-            <h2>Introduction</h2>
-            <p>Neural Networks are computational models inspired by the structure and function of the human brain. They consist of interconnected nodes (neurons) organized in layers, allowing the model to learn complex patterns and relationships in data.</p>
-            <a href="#key-concepts" class="read-more-btn">Learn More</a>
-        </section>
-
-        <!-- Key Concepts of Neural Networks -->
-        <section id="key-concepts">
-            <h2>Key Concepts in Neural Networks</h2>
-            <ul>
-                <li><strong>Neuron:</strong> The basic unit in a neural network, which processes input and generates output.</li>
-                <li><strong>Layers:</strong> Neural networks are composed of multiple layers: input, hidden, and output layers.</li>
-                <li><strong>Activation Function:</strong> A function that determines whether a neuron should activate, based on input.</li>
-                <li><strong>Weights and Biases:</strong> Parameters that are adjusted during training to minimize prediction error.</li>
-                <li><strong>Backpropagation:</strong> A process used to update weights and biases to reduce the model's error.</li>
-            </ul>
-        </section>
-
-        <!-- Types of Neural Networks -->
-        <section>
-            <h2>Types of Neural Networks</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Type</th>
-                        <th>Description</th>
-                        <th>Applications</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Feedforward Neural Network (FNN)</td>
-                        <td>Information flows in one direction, from input to output.</td>
-                        <td>Image classification, speech recognition</td>
-                    </tr>
-                    <tr>
-                        <td>Convolutional Neural Network (CNN)</td>
-                        <td>Uses convolutional layers for feature extraction, ideal for image data.</td>
-                        <td>Image and video analysis, facial recognition</td>
-                    </tr>
-                    <tr>
-                        <td>Recurrent Neural Network (RNN)</td>
-                        <td>Uses loops to handle sequential data, remembering past information.</td>
-                        <td>Natural language processing, time series prediction</td>
-                    </tr>
-                    <tr>
-                        <td>Generative Adversarial Network (GAN)</td>
-                        <td>Contains two networks (generator and discriminator) in a game-like structure.</td>
-                        <td>Image generation, deepfake creation</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- Neural Network Structure Visualization -->
-        <section>
-            <h2>Neural Network Structure</h2>
-            <svg class="tree-svg" width="700" height="400" viewBox="0 0 700 400">
-                <!-- Layer labels -->
-                <text x="50" y="20" class="layer-label">Input Layer</text>
-                <text x="300" y="20" class="layer-label">Hidden Layer</text>
-                <text x="550" y="20" class="layer-label">Output Layer</text>
-
-                <!-- Input layer circles -->
-                <circle cx="100" cy="100" r="20" fill="#4CAF50"></circle>
-                <circle cx="100" cy="200" r="20" fill="#4CAF50"></circle>
-                <circle cx="100" cy="300" r="20" fill="#4CAF50"></circle>
-
-                <!-- Hidden layer circles -->
-                <circle cx="300" cy="50" r="20" fill="#FF9800"></circle>
-                <circle cx="300" cy="150" r="20" fill="#FF9800"></circle>
-                <circle cx="300" cy="250" r="20" fill="#FF9800"></circle>
-                <circle cx="300" cy="350" r="20" fill="#FF9800"></circle>
-
-                <!-- Output layer circles -->
-                <circle cx="500" cy="200" r="20" fill="#2196F3"></circle>
-
-                <!-- Connections -->
-                <line x1="120" y1="100" x2="280" y2="50" stroke="#ccc" />
-                <line x1="120" y1="100" x2="280" y2="150" stroke="#ccc" />
-                <line x1="120" y1="200" x2="280" y2="50" stroke="#ccc" />
-                <line x1="120" y1="200" x2="280" y2="250" stroke="#ccc" />
-                <line x1="120" y1="300" x2="280" y2="250" stroke="#ccc" />
-                <line x1="320" y1="50" x2="480" y2="200" stroke="#ccc" />
-                <line x1="320" y1="150" x2="480" y2="200" stroke="#ccc" />
-                <line x1="320" y1="250" x2="480" y2="200" stroke="#ccc" />
-                <line x1="320" y1="350" x2="480" y2="200" stroke="#ccc" />
-            </svg>
-            <p>This diagram represents the basic structure of a neural network, with layers annotated and more complex connections between neurons.</p>
-        </section>
-
-        <!-- Enhanced Bar Chart with Axis Labels -->
+        <!-- Performance Comparison of Neural Networks -->
         <section>
             <h2>Performance Comparison of Different Neural Networks</h2>
             <div class="chart-container">
@@ -277,40 +192,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Interactive Training Process Flowchart -->
-        <section>
-            <h2>Training Process of Neural Networks</h2>
-            <svg class="training-process-svg" width="700" height="200" viewBox="0 0 700 200">
-                <!-- Process Steps with Interactive Styling -->
-                <rect x="50" y="75" width="100" height="50" fill="#4CAF50" rx="10" ry="10" />
-                <text x="100" y="105" font-size="12" fill="white" text-anchor="middle">Data Input</text>
-                <line x1="150" y1="100" x2="250" y2="100" stroke="#333" marker-end="url(#arrow)" />
-                <rect x="250" y="75" width="100" height="50" fill="#FF9800" rx="10" ry="10" />
-                <text x="300" y="105" font-size="12" fill="white" text-anchor="middle">Training</text>
-                <line x1="350" y1="100" x2="450" y2="100" stroke="#333" marker-end="url(#arrow)" />
-                <rect x="450" y="75" width="100" height="50" fill="#2196F3" rx="10" ry="10" />
-                <text x="500" y="105" font-size="12" fill="white" text-anchor="middle">Evaluation</text>
-                <line x1="550" y1="100" x2="650" y2="100" stroke="#333" marker-end="url(#arrow)" />
-                <rect x="650" y="75" width="100" height="50" fill="#8E44AD" rx="10" ry="10" />
-                <text x="700" y="105" font-size="12" fill="white" text-anchor="middle">Prediction</text>
-            </svg>
-            <p>This flowchart illustrates the more interactive, step-by-step training process of a neural network.</p>
-        </section>
-
-        <!-- Additional Resources -->
-        <section>
-            <h2>Further Reading and Resources</h2>
-            <ul>
-                <li><a href="https://en.wikipedia.org/wiki/Neural_network" target="_blank">Wikipedia: Neural Networks</a></li>
-                <li><a href="https://www.ibm.com/cloud/learn/neural-networks" target="_blank">IBM: Neural Networks Explained</a></li>
-                <li><a href="https://www.tensorflow.org/learn" target="_blank">TensorFlow: Neural Network Tutorials</a></li>
-            </ul>
-        </section>
     </main>
-
-    <footer>
-        <a href="contact.html">Contact Us</a>
-    </footer>
 </body>
 </html>
