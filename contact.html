@@ -2,11 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .creator-info {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        .creator-info img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+        .creator-info p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .creator-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .creator-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Contact Us</h1>
-    <p>You can reach us at: <a href="mailto:info@example.com">info@example.com</a></p>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+
+        <!-- Creator 1 Information -->
+        <div class="creator-info">
+            <img src="images/My image.jpg" alt="Creator 1">
+            <div>
+                <h2>Creator 1: Swaraj Bhattacharjee</h2>
+                <p>Email: <a href="mailto:name1@example.com">2301730011@krmangalam.edu.in</a></p>
+            </div>
+        </div>
+
+        <!-- Creator 2 Information -->
+        <div class="creator-info">
+            <img src="images/Sarvesh Image.jpg" alt="Creator 2">
+            <div>
+                <h2>Creator 2: Sarvesh Chandran</h2>
+                <p>Email: <a href="mailto:name2@example.com">2301730032@krmangalam.edu.in</a></p>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>
