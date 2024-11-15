@@ -4,7 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Large Language Models (LLMs)</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #0073e6;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,14 +62,14 @@
     </header>
 
     <main>
-        <!-- Introduction to LLMs -->
         <section>
-            <p>Large Language Models (LLMs) are advanced AI models that are designed to understand, generate, and interact with human language. These models are typically based on transformer architecture and are trained on massive datasets, allowing them to generate text, answer questions, translate languages, and perform various language-related tasks.</p>
+            <img src="images/exploring-large-language-models.jpg" alt="Abstract AI background" style="width: 100%; max-width: 800px;">
+            <p>Large Language Models (LLMs) are advanced AI models designed to understand, generate, and interact with human language. These models are typically based on transformer architecture and are trained on massive datasets, allowing them to generate text, answer questions, translate languages, and perform various language-related tasks.</p>
         </section>
 
-        <!-- Key Concepts of LLMs -->
         <section>
             <h2>Key Concepts in Large Language Models</h2>
+            <img src="images/screenshot-question-answering-context-window-workflow.jpg" alt="Visualization of transformer architecture" style="width: 100%; max-width: 800px;">
             <ul>
                 <li><strong>Transformer Architecture:</strong> The underlying architecture used by many LLMs, which processes data in parallel and captures long-range dependencies between words.</li>
                 <li><strong>Training Data:</strong> LLMs are trained on vast amounts of text data sourced from books, websites, and other written content, allowing them to learn patterns in language.</li>
@@ -29,9 +79,9 @@
             </ul>
         </section>
 
-        <!-- Applications of LLMs -->
         <section>
             <h2>Applications of LLMs</h2>
+            <img src="https://via.placeholder.com/800x400" alt="Applications of LLMs" style="width: 100%; max-width: 800px;">
             <p>LLMs are versatile and can be applied across various fields:</p>
             <ul>
                 <li><strong>Natural Language Processing (NLP):</strong> Tasks such as text generation, summarization, and sentiment analysis.</li>
@@ -42,77 +92,19 @@
             </ul>
         </section>
 
-        <!-- LLM Training Process -->
-        <section>
-            <h2>Training Large Language Models</h2>
-            <p>The process of training an LLM involves two major phases:</p>
-            <ul>
-                <li><strong>Pre-training:</strong> The model learns to predict the next word in a sentence by processing vast amounts of text data.</li>
-                <li><strong>Fine-tuning:</strong> The model is fine-tuned on task-specific datasets to specialize in certain tasks such as summarization or sentiment analysis.</li>
-            </ul>
-            <img src="images/llm_training_process.png" alt="LLM Training Process" style="width:100%; max-width:600px;">
-            <p>This diagram illustrates the stages of pre-training and fine-tuning in LLMs.</p>
-        </section>
-
-        <!-- LLM Performance Metrics -->
-        <section>
-            <h2>Performance Metrics of LLMs</h2>
-            <p>LLMs are evaluated based on various performance metrics, which include:</p>
-            <ul>
-                <li><strong>Perplexity:</strong> A measure of how well the model predicts the next word in a sequence. Lower perplexity indicates better performance.</li>
-                <li><strong>Accuracy:</strong> The percentage of correct predictions made by the model, especially in tasks like text classification or sentiment analysis.</li>
-                <li><strong>F1 Score:</strong> The harmonic mean of precision and recall, often used for classification tasks.</li>
-                <li><strong>BLEU Score:</strong> Used to evaluate machine translation tasks by comparing the output to reference translations.</li>
-            </ul>
-            <div class="chart">
-                <div class="bar" style="height: 90%; background-color: #4CAF50;">GPT-3 - 90%</div>
-                <div class="bar" style="height: 85%; background-color: #2196F3;">BERT - 85%</div>
-                <div class="bar" style="height: 75%; background-color: #f44336;">T5 - 75%</div>
-                <div class="bar" style="height: 80%; background-color: #FF9800;">XLNet - 80%</div>
-            </div>
-            <style>
-                .chart {
-                    display: flex;
-                    justify-content: space-around;
-                    margin: 20px 0;
-                }
-                .bar {
-                    width: 20%;
-                    text-align: center;
-                    color: white;
-                    font-weight: bold;
-                    padding-top: 10px;
-                }
-            </style>
-        </section>
-
-        <!-- Real-world Examples of LLM Usage -->
         <section>
             <h2>Real-World Examples of LLM Usage</h2>
-            <p>LLMs are transforming multiple industries:</p>
+            <img src="https://via.placeholder.com/800x400" alt="Real-world usage of LLMs" style="width: 100%; max-width: 800px;">
             <ul>
                 <li><strong>Customer Support:</strong> Companies use LLM-powered chatbots to provide instant support and handle customer queries.</li>
                 <li><strong>Healthcare:</strong> LLMs assist with medical records analysis, patient communication, and even diagnosing diseases from text data.</li>
                 <li><strong>Finance:</strong> LLMs analyze financial reports, generate investment insights, and provide customer service in the finance industry.</li>
             </ul>
-            <img src="images/real_world_llm_usage.jpg" alt="Real World LLM Usage" style="width:100%; max-width:600px;">
-        </section>
-
-        <!-- Future of LLMs -->
-        <section>
-            <h2>The Future of Large Language Models</h2>
-            <p>As LLMs continue to evolve, their capabilities are expected to expand. Future developments may include:</p>
-            <ul>
-                <li>Improved multilingual capabilities for better cross-lingual understanding.</li>
-                <li>Greater energy efficiency and optimization to reduce the carbon footprint of training large models.</li>
-                <li>Advanced reasoning and logic capabilities to support more complex tasks such as scientific research and medical diagnoses.</li>
-            </ul>
         </section>
     </main>
 
     <footer>
-        <a href="contact.html">Contact Us</a>
+        <p>&copy; 2024 - Learn LLMs | <a href="contact.html">Contact Us</a></p>
     </footer>
 </body>
 </html>
-
