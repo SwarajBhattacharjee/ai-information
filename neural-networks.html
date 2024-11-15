@@ -55,64 +55,6 @@
             color: #666;
         }
 
-        /* Improved Bar Chart Styling */
-        .chart-container {
-            display: flex;
-            align-items: flex-end;
-            max-width: 600px;
-            margin: 20px auto;
-            gap: 20px;
-        }
-        .y-axis {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            margin-right: 10px;
-            font-size: 0.8rem;
-            color: #666;
-            line-height: 2.1;
-        }
-        .chart {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
-            height: 250px;
-            width: 100%;
-            position: relative;
-            padding-bottom: 30px;
-        }
-        .bar {
-            width: 18%;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-            padding-top: 10px;
-            border-radius: 8px 8px 0 0;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        .bar:hover {
-            transform: scale(1.1);
-            background-color: #333;
-        }
-        .bar-value {
-            position: relative;
-            top: -20px;
-            color: #000;
-        }
-        .x-axis-labels {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            padding-top: 10px;
-            gap: 20px;
-            color: #333;
-        }
-        .x-axis-labels span {
-            text-align: center;
-            flex: 1;
-            transform: translateX(-10%);
-        }
-
         /* Neural Network Structure Styling */
         .tree-svg {
             display: block;
@@ -148,6 +90,15 @@
         }
         .read-more-btn:hover {
             background-color: #45a049;
+        }
+
+        /* Image Styling */
+        .performance-img {
+            display: block;
+            max-width: 100%;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -250,39 +201,10 @@
             <p>This diagram represents the basic structure of a neural network, with layers annotated and more complex connections between neurons.</p>
         </section>
 
-        <!-- Enhanced Bar Chart with Axis Labels -->
+        <!-- Replaced Bar Chart with Image -->
         <section>
             <h2>Performance Comparison of Different Neural Networks</h2>
-            <div class="chart-container">
-                <div class="y-axis">
-                    <span>100%</span>
-                    <span>80%</span>
-                    <span>60%</span>
-                    <span>40%</span>
-                    <span>20%</span>
-                    <span>0%</span>
-                </div>
-                <div class="chart">
-                    <div class="bar" style="height: 85%; background-color: #4CAF50;">
-                        <div class="bar-value">85%</div>
-                    </div>
-                    <div class="bar" style="height: 80%; background-color: #2196F3;">
-                        <div class="bar-value">80%</div>
-                    </div>
-                    <div class="bar" style="height: 75%; background-color: #f44336;">
-                        <div class="bar-value">75%</div>
-                    </div>
-                    <div class="bar" style="height: 88%; background-color: #FF9800;">
-                        <div class="bar-value">88%</div>
-                    </div>
-                </div>
-                <div class="x-axis-labels">
-                    <span>CNN</span>
-                    <span>RNN</span>
-                    <span>FNN</span>
-                    <span>GAN</span>
-                </div>
-            </div>
+            <img src="images/performance_comparison.jpg" alt="Performance Comparison" class="performance-img">
         </section>
 
         <!-- Interactive Training Process Flowchart -->
