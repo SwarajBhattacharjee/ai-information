@@ -109,14 +109,69 @@
     </header>
 
     <main>
-        <!-- Neural Network Structure -->
+        <!-- Introduction to Neural Networks -->
+        <section>
+            <h2>Introduction</h2>
+            <p>Neural Networks are computational models inspired by the structure and function of the human brain. They consist of interconnected nodes (neurons) organized in layers, allowing the model to learn complex patterns and relationships in data.</p>
+            <a href="#key-concepts" class="read-more-btn">Learn More</a>
+        </section>
+
+        <!-- Key Concepts of Neural Networks -->
+        <section id="key-concepts">
+            <h2>Key Concepts in Neural Networks</h2>
+            <ul>
+                <li><strong>Neuron:</strong> The basic unit in a neural network, which processes input and generates output.</li>
+                <li><strong>Layers:</strong> Neural networks are composed of multiple layers: input, hidden, and output layers.</li>
+                <li><strong>Activation Function:</strong> A function that determines whether a neuron should activate, based on input.</li>
+                <li><strong>Weights and Biases:</strong> Parameters that are adjusted during training to minimize prediction error.</li>
+                <li><strong>Backpropagation:</strong> A process used to update weights and biases to reduce the model's error.</li>
+            </ul>
+        </section>
+
+        <!-- Types of Neural Networks -->
+        <section>
+            <h2>Types of Neural Networks</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Applications</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Feedforward Neural Network (FNN)</td>
+                        <td>Information flows in one direction, from input to output.</td>
+                        <td>Image classification, speech recognition</td>
+                    </tr>
+                    <tr>
+                        <td>Convolutional Neural Network (CNN)</td>
+                        <td>Uses convolutional layers for feature extraction, ideal for image data.</td>
+                        <td>Image and video analysis, facial recognition</td>
+                    </tr>
+                    <tr>
+                        <td>Recurrent Neural Network (RNN)</td>
+                        <td>Uses loops to handle sequential data, remembering past information.</td>
+                        <td>Natural language processing, time series prediction</td>
+                    </tr>
+                    <tr>
+                        <td>Generative Adversarial Network (GAN)</td>
+                        <td>Contains two networks (generator and discriminator) in a game-like structure.</td>
+                        <td>Image generation, deepfake creation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Neural Network Structure Visualization -->
         <section>
             <h2>Neural Network Structure</h2>
             <svg class="tree-svg" width="700" height="400" viewBox="0 0 700 400">
                 <!-- Layer labels -->
-                <text x="80" y="60" class="layer-label">Input Layer</text>
-                <text x="280" y="60" class="layer-label">Hidden Layer</text>
-                <text x="480" y="60" class="layer-label">Output Layer</text>
+                <text x="50" y="20" class="layer-label">Input Layer</text>
+                <text x="300" y="20" class="layer-label">Hidden Layer</text>
+                <text x="550" y="20" class="layer-label">Output Layer</text>
 
                 <!-- Input layer circles -->
                 <circle cx="100" cy="100" r="20" fill="#4CAF50"></circle>
@@ -143,7 +198,13 @@
                 <line x1="320" y1="250" x2="480" y2="200" stroke="#ccc" />
                 <line x1="320" y1="350" x2="480" y2="200" stroke="#ccc" />
             </svg>
-            <p>This diagram represents the basic structure of a neural network.</p>
+            <p>This diagram represents the basic structure of a neural network, with layers annotated and more complex connections between neurons.</p>
+        </section>
+
+        <!-- Replaced Bar Chart with Image -->
+        <section>
+            <h2>Performance Comparison of Different Neural Networks</h2>
+            <img src="images/performance_comparison.jpg" alt="Performance Comparison" class="performance-img">
         </section>
 
         <!-- Training Process -->
@@ -166,11 +227,14 @@
             <p>This flowchart illustrates the training process of a neural network.</p>
         </section>
 
-        <!-- Performance Comparison -->
+        <!-- Additional Resources -->
         <section>
-            <h2>Performance Comparison of Neural Networks</h2>
-            <img src="../images/performance_comparison.jpg" alt="Performance Comparison" class="performance-img">
-            <p>Make sure the image path (`../images/performance_comparison.jpg`) correctly points to the image location relative to this HTML file.</p>
+            <h2>Further Reading and Resources</h2>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Neural_network" target="_blank">Wikipedia: Neural Networks</a></li>
+                <li><a href="https://www.ibm.com/cloud/learn/neural-networks" target="_blank">IBM: Neural Networks Explained</a></li>
+                <li><a href="https://www.tensorflow.org/learn" target="_blank">TensorFlow: Neural Network Tutorials</a></li>
+            </ul>
         </section>
     </main>
 
